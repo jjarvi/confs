@@ -12,6 +12,14 @@ URxvt.saveLines:         65534
 URxvt.loginShell:        true
 URxvt.scrollBar:         false
 
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.colorUL:              #4682b4
+
 ! transparency
 !URxvt.inheritPixmap:     true
 !URxvt.shading:           10
