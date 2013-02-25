@@ -1,2 +1,3 @@
-confs
+Config files
 =====
+
