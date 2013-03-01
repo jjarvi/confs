@@ -10,11 +10,11 @@ increment=2
 
 if [[ "$1" == "up" ]]; then
     if [[ "$value" -lt "$max_value" ]]; then
-        let value=$(($value + $increment))
+        value=$(($value + $increment))
     fi
 else
     if [[ "$value" -gt 0 ]]; then
-        let value=$(($value - $increment))
+        value=$(($value - $increment))
     fi
 fi
 
