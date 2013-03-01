@@ -1,0 +1,10 @@
+
+out_to_console yes
+out_to_x no
+background no
+update_interval 5
+total_run_times 0
+
+TEXT
+${loadavg 1} | ${acpitemp}c | ${battery_percent BAT1}% | ${time %a %d %b %H:%M}
+

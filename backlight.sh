@@ -19,4 +19,5 @@ else
 fi
 
 echo "$value" > $bl_file
+xsetroot -name "brightness $value"
 
