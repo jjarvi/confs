@@ -91,6 +91,8 @@ static const char *lockcmd[]    = { "xscreensaver-command", "--lock", NULL };
 static const char *volUpCmd[]   = { "amixer", "sset", "Master,0", "2%+"   , NULL };
 static const char *volDownCmd[] = { "amixer", "sset", "Master,0", "2%-"   , NULL };
 static const char *volMuteCmd[] = { "amixer", "sset", "Master,0", "toggle", NULL };
+static const char *brightnessUpCmd[] = { "sudo", "backlight.sh", "up", NULL };
+static const char *brightnessDownCmd[] = { "sudo", "backlight.sh", "down", NULL };
 
 
 static Key keys[] = {
@@ -101,6 +103,8 @@ static Key keys[] = {
     { 0,                            XF86XK_AudioMute,           spawn,          {.v = volMuteCmd } },
     { 0,                            XF86XK_AudioLowerVolume,    spawn,          {.v = volDownCmd } },
     { 0,                            XF86XK_AudioRaiseVolume,    spawn,          {.v = volUpCmd } },
+    { 0,                            XF86XK_MonBrightnessUp,     spawn,          {.v = brightnessUpCmd } },
+    { 0,                            XF86XK_MonBrightnessDown,   spawn,          {.v = brightnessDownCmd } },
     { MODKEY,                       XK_b,                       togglebar,      {0} },
     { MODKEY,                       XK_j,                       focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,                       focusstack,     {.i = -1 } },

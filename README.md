@@ -1,3 +1,3 @@
-Config files
+Config files and some scripts
 =====
 
