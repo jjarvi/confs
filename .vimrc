@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+set encoding=utf-8
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -10,15 +12,18 @@ set autoindent
 
 set number
 
+set hlsearch
+
 syntax on
 
-set hlsearch
+filetype plugin indent on
 
 " Press space to turn off hilighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplMapCTabSwitchWindows = 1
 
+" Open NERDTree when starting vim
+autocmd vimenter * NERDTree
+
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | en
