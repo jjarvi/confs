@@ -1,29 +1,49 @@
 execute pathogen#infect()
 
-set encoding=utf-8
+syntax on
+filetype plugin indent on
 
+set encoding=utf-8
+set nocompatible
+set number
+set ruler
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 set cindent
 set smartindent
 set autoindent
-
-set number
-
+set smarttab
+" Ignore case in searches
+set ignorecase
+" Searches for lowercase words match any case, mixed turns on case sensitivity
+set smartcase
 set hlsearch
-
-syntax on
-
-filetype plugin indent on
-
 " Press space to turn off hilighting
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" Hide buffers instead of closing. Allows having unwritten changes when
+" changing buffers
+set hidden
+set nobackup
+set nowritebackup
+set noswapfile
+set nocscopetag
+set tags=./tags;/
+set wildmenu
+set wildmode=longest:list,full
+
+map <silent> <C-j> :bprevious<CR>
+map <silent> <C-k> :bnext<CR>
+map <silent> <F3> <C-]>
+map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
 
 
-" Open NERDTree when starting vim
-autocmd vimenter * NERDTree
+function! HilightWhitespace()
+    highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+    match ExtraWhitespace /\s\+$\|
+        \ \+\ze\t/
+endfunction
 
+autocmd BufWinEnter * call HilightWhitespace()
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | en
