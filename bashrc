@@ -1,10 +1,20 @@
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# .bashrc
 
-export LC_ALL=en_US.utf-8 
-export LANG="$LC_ALL"
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
 
-PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;33m\]\$ \[\e[m\]\[\e[0;37m\]'
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+reset=$(tput sgr0)
+red=$(tput setaf 1)
+blue=$(tput setaf 4)
+green=$(tput setaf 2)
+PS1='\[$green\]\u@\h\[$reset\] \[$blue\]\w\[$reset\] \[$green\]\$ \[$reset\]'
 
 alias ls='ls --color=auto'
+alias l='ls -l'
+alias la='ls -la'
 
