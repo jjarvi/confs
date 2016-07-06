@@ -1,7 +1,9 @@
-execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
+
+call plug#begin('~/.vim/plug')
+Plug 'jjarvi/vim-airline'
+call plug#end()
 
 set encoding=utf-8
 set nocompatible
@@ -45,5 +47,5 @@ function! HilightWhitespace()
         \ \+\ze\t/
 endfunction
 
-autocmd BufWinEnter * call HilightWhitespace()
+
 
