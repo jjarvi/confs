@@ -3,6 +3,7 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plug')
 Plug 'jjarvi/vim-airline'
+Plug 'jjarvi/vim-airline-themes'
 call plug#end()
 
 set encoding=utf-8
@@ -47,5 +48,11 @@ function! HilightWhitespace()
         \ \+\ze\t/
 endfunction
 
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" Always show statusline
+set laststatus=2
 
 
