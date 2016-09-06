@@ -58,6 +58,8 @@ function! HilightWhitespace()
         \ \+\ze\t/
 endfunction
 
+autocmd BufWinEnter * call HilightWhitespace()
+
 let g:airline_theme='wombat'
 let g:airline_left_sep=''
 let g:airline_left_alt_sep=''
