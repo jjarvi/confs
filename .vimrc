@@ -4,6 +4,10 @@ filetype plugin indent on
 call plug#begin('~/.vim/plug')
 Plug 'jjarvi/vim-airline'
 Plug 'jjarvi/vim-airline-themes'
+Plug 'jjarvi/vim-signify'
+Plug 'jjarvi/vim-fugitive'
+Plug 'jjarvi/ctrlp.vim'
+Plug 'jjarvi/YouCompleteMe'
 call plug#end()
 
 set encoding=utf-8
