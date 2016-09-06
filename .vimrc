@@ -32,8 +32,6 @@ set ignorecase
 " Searches for lowercase words match any case, mixed turns on case sensitivity
 set smartcase
 set hlsearch
-" Press space to turn off hilighting
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Hide buffers instead of closing. Allows having unwritten changes when
 " changing buffers
 set hidden
@@ -48,16 +46,26 @@ set wildmode=longest:list,full
 map <silent> <C-j> :bprevious<CR>
 map <silent> <C-k> :bnext<CR>
 map <silent> <F3> <C-]>
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
-
+"map <C-n> :NERDTreeToggle<CR>
+"map <C-m> :NERDTreeFind<CR>
+nnoremap gr :grep -R <cword> ./
+" Press space to turn off hilighting
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+" Search and replace word under cursor with \s
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+" Search selected text in visual mode
+vnoremap // y/<C-R>"<CR>
+" fugitive bindings
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>gr :Ggrep<Space>
+nnoremap <space>gl :silent! Glog<CR>:copen<CR>
 
 function! HilightWhitespace()
     highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
     match ExtraWhitespace /\s\+$\|
         \ \+\ze\t/
 endfunction
-
 autocmd BufWinEnter * call HilightWhitespace()
 
 let g:airline_theme='wombat'
