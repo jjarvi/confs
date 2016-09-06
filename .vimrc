@@ -8,7 +8,13 @@ Plug 'jjarvi/vim-signify'
 Plug 'jjarvi/vim-fugitive'
 Plug 'jjarvi/ctrlp.vim'
 Plug 'jjarvi/YouCompleteMe'
+Plug 'jjarvi/gruvbox'
 call plug#end()
+
+set t_Co=256
+set bg=dark
+colorscheme gruvbox
+set term=screen-256color
 
 set encoding=utf-8
 set nocompatible
